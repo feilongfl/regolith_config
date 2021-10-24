@@ -2,7 +2,7 @@
 i3-wm.bar.position: top
 
 ! -- wallpaper: https://regolith-linux.org/docs/howtos/configure-wallpaper/
-gnome.wallpaper: /home/feilong/.config/regolith/resource/wallpaper.png
+gnome.wallpaper: ~/.config/regolith/resource/wallpaper.png
 
 ! -- gaps: https://regolith-linux.org/docs/howtos/default-gap/
 i3-wm.gaps.inner.size: 10
