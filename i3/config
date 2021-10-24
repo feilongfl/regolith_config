@@ -674,25 +674,29 @@ exec --no-startup-id $i3-wm.program.3
 # i3 workspace to each screen
 # `xrandr --listmonitors` to find screen name
 # ref: https://regolith-linux.org/docs/howtos/workspace-on-output/
+# ref: https://www.reddit.com/r/i3wm/comments/f1o0i4/setting_variable_in_i3config_conditionally/
 ###############################################################################
-workspace "$ws1" output DisplayPort-1
-workspace "$ws2" output DisplayPort-1
-workspace "$ws3" output DisplayPort-1
-workspace "$ws4" output DisplayPort-1
-workspace "$ws5" output DisplayPort-1
-workspace "$ws6" output DisplayPort-1
-workspace "$ws7" output DisplayPort-1
-workspace "$ws8" output DisplayPort-1
-workspace "$ws9" output DisplayPort-1
-workspace "$ws10" output DisplayPort-1
+set $primary_screen DisplayPort-1
+set $secondary_screen DVI-D-0
 
-workspace "$ws11" output DVI-D-0
-workspace "$ws12" output DVI-D-0
-workspace "$ws13" output DVI-D-0
-workspace "$ws14" output DVI-D-0
-workspace "$ws15" output DVI-D-0
-workspace "$ws16" output DVI-D-0
-workspace "$ws17" output DVI-D-0
-workspace "$ws18" output DVI-D-0
-workspace "$ws19" output DVI-D-0
+workspace "$ws1" output $primary_screen
+workspace "$ws2" output $primary_screen
+workspace "$ws3" output $primary_screen
+workspace "$ws4" output $primary_screen
+workspace "$ws5" output $primary_screen
+workspace "$ws6" output $primary_screen
+workspace "$ws7" output $primary_screen
+workspace "$ws8" output $primary_screen
+workspace "$ws9" output $primary_screen
+workspace "$ws10" output $primary_screen
+
+workspace "$ws11" output $secondary_screen
+workspace "$ws12" output $secondary_screen
+workspace "$ws13" output $secondary_screen
+workspace "$ws14" output $secondary_screen
+workspace "$ws15" output $secondary_screen
+workspace "$ws16" output $secondary_screen
+workspace "$ws17" output $secondary_screen
+workspace "$ws18" output $secondary_screen
+workspace "$ws19" output $secondary_screen
 
