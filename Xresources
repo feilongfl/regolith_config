@@ -10,3 +10,4 @@ i3-wm.gaps.inner.size: 10
 ! -- startups
 i3-wm.program.1: /usr/bin/trilium
 i3-wm.program.2: /usr/bin/lollypop
+i3-wm.program.3: /usr/bin/google-chrome-stable
