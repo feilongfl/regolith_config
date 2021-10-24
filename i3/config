@@ -89,13 +89,9 @@ set_from_resource $ws10_key i3-wm.workspace.10.key 0
 # Launcher dialogs
 ###############################################################################
 
-## Launch // Terminal // <> Enter ##
-set_from_resource $i3-wm.binding.terminal i3-wm.binding.terminal Return
-bindsym $mod+$i3-wm.binding.terminal exec /usr/bin/st
-
-## [feilong modify] Launch // Browser // <><Shift> Enter ##
-# set_from_resource $i3-wm.binding.browser i3-wm.binding.browser Shift+Return
-# bindsym $mod+$i3-wm.binding.browser exec gtk-launch $(xdg-settings get default-web-browser)
+## Launch // Browser // <><Shift> Space ##
+set_from_resource $i3-wm.binding.browser i3-wm.binding.browser Shift+space
+bindsym $mod+$i3-wm.binding.browser exec gtk-launch $(xdg-settings get default-web-browser)
 
 set_from_resource $rofiTheme rofi.theme /etc/regolith/styles/lascaille/rofi.rasi
 
@@ -103,11 +99,6 @@ set_from_resource $rofiTheme rofi.theme /etc/regolith/styles/lascaille/rofi.rasi
 set_from_resource $i3-wm.binding.launcher.app i3-wm.binding.launcher.app space
 set_from_resource $i3-wm.program.launcher.app i3-wm.program.launcher.app rofi -show drun -theme $rofiTheme
 bindsym $mod+$i3-wm.binding.launcher.app exec $i3-wm.program.launcher.app
-
-## [feilong remove] Launch // Command // <><Shift> Space ##
-# set_from_resource $i3-wm.binding.launcher.cmd i3-wm.binding.launcher.cmd Shift+space
-# set_from_resource $i3-wm.program.launcher.cmd i3-wm.program.launcher.cmd rofi -show run -theme $rofiTheme
-# bindsym $mod+$i3-wm.binding.launcher.cmd exec $i3-wm.program.launcher.cmd
 
 ## Navigate // Window by Name // <><Ctrl> Space ##
 set_from_resource $i3-wm.binding.launcher.window i3-wm.binding.launcher.window Ctrl+space
