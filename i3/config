@@ -673,6 +673,7 @@ exec --no-startup-id $i3-wm.program.3
 ###############################################################################
 # i3 workspace to each screen
 # `xrandr --listmonitors` to find screen name
+# ref: https://regolith-linux.org/docs/howtos/workspace-on-output/
 ###############################################################################
 workspace "$ws1" output DisplayPort-1
 workspace "$ws2" output DisplayPort-1
