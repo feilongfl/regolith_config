@@ -1,3 +1,5 @@
 ! -- i3bar position
 i3-wm.bar.position: top
 
+! -- wallpaper: https://regolith-linux.org/docs/howtos/configure-wallpaper/
+gnome.wallpaper: /home/feilong/.config/regolith/resource/wallpaper.png
