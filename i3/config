@@ -396,6 +396,15 @@ set_from_resource $i3-wm.binding.notification_ui i3-wm.binding.notification_ui n
 set_from_resource $i3-wm.program.notification_ui i3-wm.program.notification_ui /usr/bin/rofication-gui
 bindsym $mod+$i3-wm.binding.notification_ui exec $i3-wm.program.notification_ui
 
+
+# amixer
+## Media // Volume Up // <Ctrl><Alt> ↑ ##
+bindsym $alt+Ctrl+Up exec amixer set Master 5%+
+## Media // Volume Down // <Ctrl><Alt> ↓ ##
+bindsym $alt+Ctrl+Down exec amixer set Master 5%-
+## Media // Mute // <Ctrl><Alt> m ##
+bindsym $alt+Ctrl+m exec 'amixer set Master toggle'
+
 ###############################################################################
 # Workspace Management
 ###############################################################################
