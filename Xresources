@@ -14,3 +14,7 @@ i3-wm.program.3: /usr/bin/anki
 
 ! -- mouse focus
 i3-wm.gaps.focus_follows_mouse: true
+
+! -- space move
+i3-wm.binding.ws_next_on_output: Down
+i3-wm.binding.ws_prev_on_output: Up
