@@ -1,5 +1,12 @@
 #!/usr/bin/env fish
 
+# enable direnv
+direnv hook fish | source
+
+# load direnv
+direnv allow (dirname (status --current-filename))
+echo test $primary_screen_max_workspace
+
 function toWorkspace
     i3-msg workspace number $argv
 end
@@ -35,7 +42,7 @@ function next_workspace
         echo maxWorkspaceNum $maxWorkspaceNum
         echo nextWorkspaceNum $nextWorkspaceNum
 
-        if test $nextWorkspaceNum -lt 10
+        if test $nextWorkspaceNum -lt $primary_screen_max_workspace
             eval $argv $nextWorkspaceNum
         else
             # back to first
