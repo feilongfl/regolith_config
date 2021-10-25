@@ -10,16 +10,16 @@ if test $maxWorkspaceNum -eq $focusWorkspaceNum
     echo maxWorkspaceNum $maxWorkspaceNum
     echo nextWorkspaceNum $nextWorkspaceNum
 
-    i3-msg workspace number $nextWorkspaceNum
-else
-    set nextWorkspaceNum (expr $focusWorkspaceNum + 1)
-    echo focusWorkspaceNum $focusWorkspaceNum
-    echo nextWorkspaceNum $nextWorkspaceNum
-
     if test $nextWorkspaceNum -lt 10
         i3-msg workspace number $nextWorkspaceNum
     else
         # back to first
         i3-msg workspace number 1
     end
+else
+    set nextWorkspaceNum (expr $focusWorkspaceNum + 1)
+    echo focusWorkspaceNum $focusWorkspaceNum
+    echo nextWorkspaceNum $nextWorkspaceNum
+
+    i3-msg workspace number $nextWorkspaceNum
 end
