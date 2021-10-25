@@ -4,6 +4,11 @@ function toWorkspace
     i3-msg workspace number $argv
 end
 
+function moveToWorkspace
+    i3-msg move container to workspace number $argv
+    i3-msg workspace number $argv
+end
+
 set primary_screen (i3-msg -t get_config | grep 'set $primary_screen' | cut -d ' ' -f 3)
 set minWorkspaceNum (i3-msg -t get_workspaces | jq '.[] | select(.output=="'$primary_screen'") | .num' | sort -n | head -n1)
 set maxWorkspaceNum (i3-msg -t get_workspaces | jq '.[] | select(.output=="'$primary_screen'") | .num' | sort -n | tail -n1)
@@ -31,16 +36,16 @@ function next_workspace
         echo nextWorkspaceNum $nextWorkspaceNum
 
         if test $nextWorkspaceNum -lt 10
-            toWorkspace $nextWorkspaceNum
+            eval $argv $nextWorkspaceNum
         else
             # back to first
-            toWorkspace 1
+            eval $argv 1
         end
     else
         set nextWorkspaceNum (expr $focusWorkspaceNum + 1)
         echo focusWorkspaceNum $focusWorkspaceNum
         echo nextWorkspaceNum $nextWorkspaceNum
 
-        toWorkspace $nextWorkspaceNum
+        eval $argv $nextWorkspaceNum
     end
 end

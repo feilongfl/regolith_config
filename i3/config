@@ -174,15 +174,15 @@ set_from_resource $i3-wm.binding.ws_prev_on_output i3-wm.binding.ws_prev_on_outp
 ## bindsym $mod+$i3-wm.binding.ws_prev_on_output workspace prev_on_output
 bindsym $mod+$i3-wm.binding.ws_prev_on_output exec --no-startup-id ~/.config/regolith/i3/prev_workspace.sh
 
+## Navigate // Next Workspace on Output // <><Shift> ↓ ##
+bindsym $mod+Shift+Down exec --no-startup-id ~/.config/regolith/i3/movenext_workspace.sh
+
+## Navigate // Previous Workspace on Output // <><Shift> ↑ ##
+bindsym $mod+Shift+Up exec --no-startup-id ~/.config/regolith/i3/moveprev_workspace.sh
+
 ###############################################################################
 # Window and Workspace Configuration
 ###############################################################################
-
-## Modify // Window Position // <><Shift> ↑ ↓ ← → ##
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
 
 ## Modify // Window Position // <><Shift> k j h l ##
 set_from_resource $i3-wm.binding.move_left i3-wm.binding.move_left Shift+h
