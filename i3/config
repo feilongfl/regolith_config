@@ -381,6 +381,9 @@ bindsym $alt+Ctrl+Down exec amixer set Master 5%-
 ## Media // Mute // <Ctrl><Alt> m ##
 bindsym $alt+Ctrl+m exec 'amixer set Master toggle'
 
+## Media // ScreenShot // <> s ##
+bindsym $mod+s exec flameshot gui
+
 ###############################################################################
 # Workspace Management
 ###############################################################################
@@ -651,6 +654,8 @@ workspace "$ws19" output $secondary_screen
 
 assign [class="Trilium Notes"] $ws1
 assign [class="Lollypop"] $ws1
+
+for_window [class="flameshot"] floating enable
 
 exec --no-startup-id i3-msg 'workspace number 1; append_layout ~/.config/regolith/resource/workspace1.layout.json'
 exec --no-startup-id i3-msg 'workspace number 11; exec /usr/bin/google-chrome-stable'
