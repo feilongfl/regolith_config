@@ -656,6 +656,7 @@ assign [class="Trilium Notes"] $ws1
 assign [class="Lollypop"] $ws1
 
 for_window [class="flameshot"] floating enable
+for_window [class="^Alacritty$"] floating enable
 
 exec --no-startup-id i3-msg 'workspace number 1; append_layout ~/.config/regolith/resource/workspace1.layout.json'
 exec --no-startup-id i3-msg 'workspace number 11; exec /usr/bin/google-chrome-stable'
