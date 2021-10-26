@@ -654,6 +654,7 @@ workspace "$ws19" output $secondary_screen
 
 assign [class="Trilium Notes"] $ws1
 assign [class="Lollypop"] $ws1
+assign [class="^com.github.rafostar.Clapper$"] $ws11
 
 for_window [class="flameshot"] floating enable
 for_window [class="^Alacritty$"] floating enable
