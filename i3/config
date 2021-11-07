@@ -143,16 +143,16 @@ bindsym $mod+$i3-wm.binding.up focus up
 bindsym $mod+$i3-wm.binding.right focus right
 
 ## Navigate // Workspaces 1-10 // <> 0..9 ##
-bindsym $mod+$ws1_key workspace number $ws1
-bindsym $mod+$ws2_key workspace number $ws2
-bindsym $mod+$ws3_key workspace number $ws3
-bindsym $mod+$ws4_key workspace number $ws4
-bindsym $mod+$ws5_key workspace number $ws5
-bindsym $mod+$ws6_key workspace number $ws6
-bindsym $mod+$ws7_key workspace number $ws7
-bindsym $mod+$ws8_key workspace number $ws8
-bindsym $mod+$ws9_key workspace number $ws9
-bindsym $mod+$ws10_key workspace number $ws10
+bindsym $mod+$ws1_key workspace number $ws1; exec i3-msg '[class="OSD Lyrics"] move workspace current'
+bindsym $mod+$ws2_key workspace number $ws2; exec i3-msg '[class="OSD Lyrics"] move workspace current'
+bindsym $mod+$ws3_key workspace number $ws3; exec i3-msg '[class="OSD Lyrics"] move workspace current'
+bindsym $mod+$ws4_key workspace number $ws4; exec i3-msg '[class="OSD Lyrics"] move workspace current'
+bindsym $mod+$ws5_key workspace number $ws5; exec i3-msg '[class="OSD Lyrics"] move workspace current'
+bindsym $mod+$ws6_key workspace number $ws6; exec i3-msg '[class="OSD Lyrics"] move workspace current'
+bindsym $mod+$ws7_key workspace number $ws7; exec i3-msg '[class="OSD Lyrics"] move workspace current'
+bindsym $mod+$ws8_key workspace number $ws8; exec i3-msg '[class="OSD Lyrics"] move workspace current'
+bindsym $mod+$ws9_key workspace number $ws9; exec i3-msg '[class="OSD Lyrics"] move workspace current'
+bindsym $mod+$ws10_key workspace number $ws10; exec i3-msg '[class="OSD Lyrics"] move workspace current'
 ## Navigate // Workspace 11 - 19 // <><Ctrl> 1..9 ##
 bindsym $mod+Ctrl+$ws1_key workspace number $ws11
 bindsym $mod+Ctrl+$ws2_key workspace number $ws12
@@ -245,16 +245,16 @@ set_from_resource $i3-wm.binding.layout_mode i3-wm.binding.layout_mode t
 bindsym $mod+$i3-wm.binding.layout_mode layout toggle tabbed splith splitv
 
 ## Modify // Move Window to Workspace 1 - 10 // <><Shift> 0..9 ##
-bindsym $mod+Shift+$ws1_key move container to workspace number $ws1
-bindsym $mod+Shift+$ws2_key move container to workspace number $ws2
-bindsym $mod+Shift+$ws3_key move container to workspace number $ws3
-bindsym $mod+Shift+$ws4_key move container to workspace number $ws4
-bindsym $mod+Shift+$ws5_key move container to workspace number $ws5
-bindsym $mod+Shift+$ws6_key move container to workspace number $ws6
-bindsym $mod+Shift+$ws7_key move container to workspace number $ws7
-bindsym $mod+Shift+$ws8_key move container to workspace number $ws8
-bindsym $mod+Shift+$ws9_key move container to workspace number $ws9
-bindsym $mod+Shift+$ws10_key move container to workspace number $ws10
+bindsym $mod+Shift+$ws1_key move container to workspace number $ws1; exec i3-msg '[class="OSD Lyrics"] move workspace current'
+bindsym $mod+Shift+$ws2_key move container to workspace number $ws2; exec i3-msg '[class="OSD Lyrics"] move workspace current'
+bindsym $mod+Shift+$ws3_key move container to workspace number $ws3; exec i3-msg '[class="OSD Lyrics"] move workspace current'
+bindsym $mod+Shift+$ws4_key move container to workspace number $ws4; exec i3-msg '[class="OSD Lyrics"] move workspace current'
+bindsym $mod+Shift+$ws5_key move container to workspace number $ws5; exec i3-msg '[class="OSD Lyrics"] move workspace current'
+bindsym $mod+Shift+$ws6_key move container to workspace number $ws6; exec i3-msg '[class="OSD Lyrics"] move workspace current'
+bindsym $mod+Shift+$ws7_key move container to workspace number $ws7; exec i3-msg '[class="OSD Lyrics"] move workspace current'
+bindsym $mod+Shift+$ws8_key move container to workspace number $ws8; exec i3-msg '[class="OSD Lyrics"] move workspace current'
+bindsym $mod+Shift+$ws9_key move container to workspace number $ws9; exec i3-msg '[class="OSD Lyrics"] move workspace current'
+bindsym $mod+Shift+$ws10_key move container to workspace number $ws10; exec i3-msg '[class="OSD Lyrics"] move workspace current'
 ## Modify // Move Window to Workspace 11 - 19// <><Ctrl><Shift> 1..9 ##
 bindsym $mod+Shift+Ctrl+$ws1_key move container to workspace number $ws11
 bindsym $mod+Shift+Ctrl+$ws2_key move container to workspace number $ws12
@@ -658,6 +658,9 @@ assign [class="^com.github.rafostar.Clapper$"] $ws11
 
 for_window [class="flameshot"] floating enable
 for_window [class="^Alacritty$"] floating enable
+for_window [class="OSD Lyrics"] floating enable
+for_window [title="搜索歌词"] resize set 800 600
+for_window [title="选择要下载的歌词"] resize set 800 600
 
 exec --no-startup-id i3-msg 'workspace number 1; append_layout ~/.config/regolith/resource/workspace1.layout.json'
 exec --no-startup-id i3-msg 'workspace number 11; exec /usr/bin/google-chrome-stable'

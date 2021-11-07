@@ -1,0 +1,6 @@
+# weather
+#
+# Display local weather
+[weather]
+interval=3600
+command=curl -Ss -H "Accept-Language: zh" 'https://wttr.in/DaLian?format="%l:+%c+%t\n"' | sed -r 's/.*:\s//' | head -n1 | xargs echo

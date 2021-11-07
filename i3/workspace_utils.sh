@@ -14,6 +14,10 @@ set minWorkspaceNum (i3-msg -t get_workspaces | jq '.[] | select(.output=="'$pri
 set maxWorkspaceNum (i3-msg -t get_workspaces | jq '.[] | select(.output=="'$primary_screen'") | .num' | sort -n | tail -n1)
 set focusWorkspaceNum (i3-msg -t get_workspaces | jq '.[] | select(.focused==true) | .num' | sort -n | tail -n1)
 
+function move_lyric
+    i3-msg '[class="OSD Lyrics"] move workspace current'
+end
+
 function prev_workspace
     echo $minWorkspaceNum $focusWorkspaceNum
     if test $minWorkspaceNum -eq $focusWorkspaceNum
@@ -26,6 +30,8 @@ function prev_workspace
 
         eval $argv $prevWorkspaceNum
     end
+
+    move_lyric
 end
 
 function next_workspace
@@ -48,4 +54,6 @@ function next_workspace
 
         eval $argv $nextWorkspaceNum
     end
+
+    move_lyric
 end
