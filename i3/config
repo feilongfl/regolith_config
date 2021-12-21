@@ -663,6 +663,10 @@ for_window [title="搜索歌词"] resize set 800 600
 for_window [title="选择要下载的歌词"] resize set 800 600
 
 exec --no-startup-id i3-msg 'workspace number 1; append_layout ~/.config/regolith/resource/workspace1.layout.json'
+exec --no-startup-id i3-msg 'workspace number 1; exec /usr/bin/osdlyrics'
+
+exec --no-startup-id i3-msg 'workspace number 11; append_layout ~/.config/regolith/resource/workspace11.layout.json'
 exec --no-startup-id i3-msg 'workspace number 11; exec /usr/bin/google-chrome-stable'
+# exec --no-startup-id i3-msg 'workspace number 11; exec /usr/bin/scrcpy'
 
 exec_always --no-startup-id numlockx on
